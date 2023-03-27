@@ -6,12 +6,14 @@ let arrayProducts = [
     {
         img: "assets/products/1.png",
         name: "1",
-        description: "this is the 1st product"
+        description: "this is the 1st product",
+        type: "book"
     },
     {
         img: "assets/products/2.png",
         name: "2",
-        description: "this is the 2st product"
+        description: "this is the 2st product",
+        type: "electronics"
     },
     {
         img: "assets/products/3.png",
@@ -32,11 +34,17 @@ let arrayProducts = [
 
 function getElements(){
     let container = document.querySelector("#container");
-    let output = "";
+    let output = "<div class='row'>";
+    let i = 0;
     arrayProducts.forEach(element => {
-        let elem = "<div class='card__item card__inner'><img src="+ element.img +" alt="+element.name+"> <span>"+element.name+" : "+element.description+"</span></div>"
+        let elem = "<div class='col-sm-4'><img class='img-fluid d-block' src="+ element.img +" alt="+element.name+"> <label>"+element.name+" : "+element.description+"</label></div>"
+        if(i % 3 == 2){
+            elem += "</div><div class='row'>"
+        }
+        i ++;
         output += elem;
     });
+    output += "</div>";
     container.innerHTML = output;
 }
 
