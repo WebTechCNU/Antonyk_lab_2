@@ -5,31 +5,40 @@ const navBtnImg = document.querySelector('#nav-btn-img');
 let arrayProducts = [
     {
         img: "assets/products/1.png",
-        name: "1",
-        description: "this is the 1st product",
-        type: "book"
+        name: "Vinil num 1",
+        description: "Lana Del Rey - Blue Banisters",
+        price: "100 dollars",
     },
     {
         img: "assets/products/2.png",
-        name: "2",
-        description: "this is the 2st product",
-        type: "electronics"
+        name: "Vinil num 2",
+        description: "Florence + The Machine - High as Hope",
+        price: "120 dollars",
     },
     {
         img: "assets/products/3.png",
-        name: "3",
-        description: "this is the 3st product"
+        name: "Vinil num 3",
+        description: "Melanie Martinez - K12",
+        price: "85 dollars",
     },
     {
         img: "assets/products/4.png",
-        name: "4",
-        description: "this is the 4st product"
+        name: "Vinil num 4",
+        description: "Lana Del Rey - DYKTTATUOBLVD",
+        price: "90 dollars",
     },
     {
         img: "assets/products/5.png",
-        name: "5",
-        description: "this is the 5st product"
-    }
+        name: "Vinil num 5",
+        description: "Ethel Cain - Preacher's Daughter", 
+        price: "91 dollars",
+    }, 
+    {
+        img: "assets/products/6.png",
+        name: "Vinil num 6",
+        description: "Harry Styles - Fine Line",
+        price: "95 dollars",
+    },
 ];
 
 function getElements(){
@@ -37,7 +46,7 @@ function getElements(){
     let output = "<div class='row'>";
     let i = 0;
     arrayProducts.forEach(element => {
-        let elem = "<div class='col-sm-4'><img class='img-fluid d-block' src="+ element.img +" alt="+element.name+"> <label>"+element.name+" : "+element.description+"</label></div>"
+        let elem = "<div class='col-sm-4'><img class='img-fluid d-block' src="+ element.img +" alt="+element.name+"> <label>"+element.name+" : "+element.description+ "\n"+"price - "+element.price+"</label></div>"
         if(i % 3 == 2){
             elem += "</div><div class='row'>"
         }
@@ -55,3 +64,61 @@ navBtn.onclick = () => {
         navBtnImg.src = "assets/images/hamburg.png";
     }
 }
+var popup = document.getElementById("popup");
+var acceptBtn = document.getElementById("accept");
+var rejectBtn = document.getElementById("reject");
+
+
+setTimeout(function() {
+  if (!localStorage.getItem("subscribed")) {
+    popup.style.display = "flex";
+  }
+}, 5000);
+
+
+acceptBtn.addEventListener("click", function() {
+  popup.style.display = "none";
+  localStorage.setItem("subscribed", true);
+});
+
+rejectBtn.addEventListener("click", function() {
+  popup.style.display = "none";
+});
+var message = document.createElement("div");
+message.innerHTML = "Дякуємо за підписку!";
+document.body.appendChild(message);
+
+
+setTimeout(function() {
+  document.body.removeChild(message);
+}, 3000);
+
+
+
+
+const modalWrapper = document.getElementById("modal-wrapper");
+const closeButton = document.getElementById("close-button");
+const timeLeftSpan = document.getElementById("time-left");
+
+let timeLeft = 10;
+
+
+setTimeout(() => {
+  modalWrapper.style.display = "flex";
+  const timer = setInterval(() => {
+    timeLeft--;
+    timeLeftSpan.textContent = timeLeft;
+    if (timeLeft === 0) {
+      clearInterval(timer);
+      closeButton.removeAttribute("disabled");
+      timeLeftSpan.parentElement.style.display = "none";
+    }
+  }, 1000);
+}, 10000);
+
+closeButton.addEventListener("click", () => {
+  modalWrapper.style.display = "none";
+});
+
+
+

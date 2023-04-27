@@ -1,3 +1,77 @@
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+#popup p {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+#popup button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+#popup button#accept {
+    background-color: green;
+    color: white;
+  }
+  
+#popup button#reject {
+    background-color: red;
+    color: white;
+  }
+
+
+  #modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  #modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  #close-button {
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+  }
+  
+  #timer {
+    margin-top: 10px;
+  }
+  
+  #time-left {
+    font-weight: bold;
+  }
+  
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;

@@ -49,53 +49,25 @@
                 </div>
             </div>
         </div><!-- /.intro -->
-
+        <div id="popup">
+            <p>Subscribe to our messages!</p>
+            <button id="accept">Accept</button>
+            <button id="reject">Reject</button>
+          </div>
         <div>
             <button onclick="getElements()">Click me!</button>
             <div class="container-fluid" id="container"></div>
         </div>
 
-        <section class="section" id="about">
-            <div class="container">
-
-                <div class="section__header">
-                    <h2 class="section__title">Story about three alt albums</h2>
-                    <div class="section__text">
-                        <p></p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card__item">
-                        <div class="card__inner_h">
-                            <div class="card__img_h">
-                                <img src="assets/images/High as hope.png" alt="">
-                            </div>
-                            <div class="card__text_h">High as Hope</div>
-                        </div>
-                    </div>
-
-                    <div class="card__item">
-                        <div class="card__inner">
-                            <div class="card__img">
-                                <img src="assets/images/K-12.jpg" alt="">
-                            </div>
-                            <div class="card__text">K-12</div>
-                        </div>
-                    </div>
-
-                    <div class="card__item">
-                        <div class="card__inner_p">
-                            <div class="card__img_p">
-                                <img src="assets/images/Preacher's Daughter.png" alt="">
-                            </div>
-                            <div class="card__text_p">Preacher's Daughter</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- /.container -->
-        </section>
+        <div id="modal-wrapper">
+            <div id="modal-content">
+              <p>New vinyl on sale soon: Big Time by Angel Olsen</p>
+              <button id="close-button" disabled>Close</button>
+              <div id="timer">
+                <span id="time-left">10</span> seconds before closing
+              </div>
+            </div>
+          </div>
         <!-- Footer -->
         <footer class="footer" id="footer">
             <div class="container">
